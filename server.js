@@ -18,11 +18,22 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const db = require("./models/index.js");
+// Drop existing table and re-sync database
+db.sequelize.sync({ force: true }).then(() => {
+    console.log("Drop and re-sync db.");
+});
+
+// db.sequelize.sync().then(() => {
+//     console.log("sync db status: done");
+// });
 
 app.get('/', function(req, res) {
-    db.Url.findAll({ order: [
+    db.Url.findAll({
+            order: [
                 ['createdAt', 'DESC']
-            ], limit: 5 })
+            ],
+            limit: 5
+        })
         .then(urlObjs => {
             res.render('index', {
                 urlObjs: urlObjs
@@ -42,6 +53,9 @@ app.post('/url', function(req, res) {
             });
     });
 });
+
+// api route
+require("./routes/loginCredential.route")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;

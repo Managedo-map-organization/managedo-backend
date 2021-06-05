@@ -11,13 +11,16 @@
         "password": "^%1N4lpostgresql990311",
         "database": "managedodb",
         "host": "127.0.0.1",
-        "dialect": "postgres"
+        "dialect": "postgres",
+        "operatorsAliases": false
     },
     "production": {
         "username": "postgres",
         "password": "^%1N4lpostgresql990311",
         "database": "managedodb",
         "host": "127.0.0.1",
-        "dialect": "postgres"
+        "dialect": "postgres",
+        "operatorsAliases": false,
+        "use_env_variable": "DATABASE_URL"
     }
 }

@@ -23,7 +23,7 @@ db.sequelize.sync().then(() => {
 });
 
 // simple route
-app.get("/", (res) => {
+app.get("/", (req, res) => {
     res.json({ message: "Managedo application database" });
 });
 

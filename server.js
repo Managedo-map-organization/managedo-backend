@@ -27,35 +27,58 @@ db.sequelize.sync({ force: true }).then(() => {
 //     console.log("sync db status: done");
 // });
 
-app.get('/', function(req, res) {
-    db.Url.findAll({
-            order: [
-                ['createdAt', 'DESC']
-            ],
-            limit: 5
-        })
-        .then(urlObjs => {
-            res.render('index', {
-                urlObjs: urlObjs
-            });
-        });
+app.get(['/', '/api'], function(req, res) {
+    res.json({ message: "Managedo application database" });
 });
 
 app.use(express.json());
 
-app.post('/url', function(req, res) {
-    const url = req.body.url
+app.post('/add-dummy', function(req, res) {
+    'use strict';
 
-    urlShortener.short(url, function(err, shortUrl) {
-        db.Url.findOrCreate({ where: { url: url, shortUrl: shortUrl } })
-            .then(([urlObj, created]) => {
-                res.send(shortUrl)
-            });
-    });
+    const fs = require('fs');
+
+    let rawdata = fs.readFileSync('./seeders/dummy.json');
+    let dummy = JSON.parse(rawdata);
+
+    const loginCredentialsDummy = dummy.loginCredentials;
+    const usersDummy = dummy.users;
+
+    let message = "Successfully add dummy data";
+    addDummy(usersDummy, "User");
+    addDummy(loginCredentialsDummy, "LoginCredential");
+
+    res.send({ message: message });
 });
+
+function addDummy(dummyJsons, tables) {
+    if (Array.isArray(dummyJsons) && dummyJsons.length > 0) {
+        Promise.all(dummyJsons.map(async(dummyJson) => {
+            try {
+                const [addedData, created] = await db[tables].findOrCreate({
+                    where: dummyJson
+                }).catch(() => {});
+
+                console.log(addedData._options.isNewRecord ? {
+                    created: created,
+                    isNew: addedData._options.isNewRecord,
+                    addedData: addedData
+                } : {
+                    created: created,
+                    isNew: addedData._options.isNewRecord,
+                    message: `Error happen when adding data into ${tables}`,
+                    failedAddedData: dummyJson
+                });
+            } catch {
+
+            }
+        }));
+    }
+}
 
 // api route
 require("./routes/loginCredential.route")(app);
+require("./routes/user.route")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;

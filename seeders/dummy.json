@@ -1,0 +1,47 @@
+{
+    "loginCredentials": [{
+        "id": 1,
+        "username": "parent1-name",
+        "password": "user@!23",
+        "fk_user_id": 1
+    }, {
+        "id": 2,
+        "username": "student1-name",
+        "password": "user@!23",
+        "fk_user_id": 2
+    }, {
+        "id": 3,
+        "username": "parent2-name",
+        "password": "user@!23",
+        "fk_user_id": 3
+    }],
+
+    "users": [{
+        "id": 1,
+        "name": "parent 1 name",
+        "profilePicURL": "https://randomuser.me/api/portraits/thumb/women/4.jpg",
+        "phoneNo": "01111982733",
+        "gender": "male",
+        "birthDate": "1969-07-20",
+        "email": "std@gmail.com",
+        "userType": "parent"
+    }, {
+        "id": 2,
+        "name": "student 1 name",
+        "profilePicURL": "https://randomuser.me/api/portraits/thumb/women/4.jpg",
+        "phoneNo": "01111982733",
+        "gender": "male",
+        "birthDate": "1969-07-20",
+        "email": "std@gmail.com",
+        "userType": "student"
+    }, {
+        "id": 3,
+        "name": "parent 2 name",
+        "profilePicURL": "https://randomuser.me/api/portraits/thumb/women/4.jpg",
+        "phoneNo": "01111982733",
+        "gender": "female",
+        "birthDate": "1969-07-20",
+        "email": "std@gmail.com",
+        "userType": "parent"
+    }]
+}

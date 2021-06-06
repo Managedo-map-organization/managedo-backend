@@ -4,7 +4,14 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
     class User extends Model {
-        static associate(models) {}
+        static associate(models) {
+            models.LoginCredential.belongsTo(models.User, {
+                foreignKey: 'fk_user_id',
+                onDelete: 'cascade',
+                onUpdate: 'cascade',
+                hooks: true,
+            });
+        }
     };
     User.init({
         id: {

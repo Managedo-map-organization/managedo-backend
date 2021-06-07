@@ -1,65 +1,59 @@
-'use strict';
 const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class User extends Model {
+    class Course extends Model {
         static associate(models) {
-            models.User.belongsTo(models.Parent, {
-                foreignKey: 'fkParentId',
+            models.Semester.hasMany(models.Course, {
+                foreignKey: 'fkSemesterId',
                 onDelete: 'cascade',
                 onUpdate: 'cascade',
                 hooks: true,
             });
-            models.User.belongsTo(models.Student, {
-                foreignKey: 'fkStudentId',
+            models.Course.belongsTo(models.Semester, {
+                foreignKey: 'fkSemesterId',
                 onDelete: 'cascade',
                 onUpdate: 'cascade',
                 hooks: true,
             });
         }
     };
-    User.init({
+    Course.init({
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
         },
-        name: {
+        courseCode: {
             type: DataTypes.STRING,
-            allowNull: false
-        },
-        profilePicURL: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        phoneNo: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        gender: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        birthDate: {
-            type: DataTypes.DATE,
             allowNull: false,
-            defaultValue: DataTypes.Now,
         },
-        email: {
+        courseName: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
         },
-        userType: {
+        section: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        credit: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        targetedGrade: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+        },
+        achievedGrade: {
+            type: DataTypes.STRING,
+            allowNull: false,
         }
     }, {
         timestamps: false,
         underscore: true,
         sequelize,
-        modelName: 'User',
+        modelName: 'Course',
     });
-    return User;
+    return Course;
 };

@@ -1,17 +1,16 @@
-'use strict';
 const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class User extends Model {
+    class Education extends Model {
         static associate(models) {
-            models.User.belongsTo(models.Parent, {
-                foreignKey: 'fkParentId',
+            models.Student.hasMany(models.Education, {
+                foreignKey: 'fkStudentId',
                 onDelete: 'cascade',
                 onUpdate: 'cascade',
                 hooks: true,
             });
-            models.User.belongsTo(models.Student, {
+            models.Education.belongsTo(models.Student, {
                 foreignKey: 'fkStudentId',
                 onDelete: 'cascade',
                 onUpdate: 'cascade',
@@ -19,47 +18,42 @@ module.exports = (sequelize, DataTypes) => {
             });
         }
     };
-    User.init({
+    Education.init({
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
         },
-        name: {
+        universityName: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        profilePicURL: {
+        field: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        phoneNo: {
+        degreeLevel: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        gender: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        birthDate: {
+        startDate: {
             type: DataTypes.DATE,
-            allowNull: false,
-            defaultValue: DataTypes.Now,
-        },
-        email: {
-            type: DataTypes.STRING,
             allowNull: false
         },
-        userType: {
-            type: DataTypes.STRING,
+        targetedCGPA: {
+            type: DataTypes.DECIMAL(5, 2),
+            allowNull: false
+        },
+        achievedCGPA: {
+            type: DataTypes.DECIMAL(5, 2),
             allowNull: false
         }
     }, {
         timestamps: false,
         underscore: true,
         sequelize,
-        modelName: 'User',
+        modelName: 'Education',
     });
-    return User;
+    return Education;
 };

@@ -30,6 +30,96 @@ exports.findAll = (req, res) => {
         });
 };
 
+// Retrieve all Relations information based on the fkStudentId
+exports.findAllBasedOnFkStudentId = (req, res) => {
+    const fkStudentId = req.params.fkStudentId;
+
+    var condition = {
+        fkStudentId: {
+            [Op.eq]: fkStudentId
+        }
+    }
+
+    Relation.findAll({ where: condition })
+        .then(data => {
+            res.send(JSON.parse(JSON.stringify(data)));
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: `Error retrieving Relations information with fkStudentId ${fkStudentId}`
+            });
+        });
+};
+
+// Retrieve all Relations information based on the fkParentId
+exports.findAllBasedOnFkParentId = (req, res) => {
+    const fkParentId = req.params.fkParentId;
+
+    var condition = {
+        fkParentId: {
+            [Op.eq]: fkParentId
+        }
+    }
+
+    Relation.findAll({ where: condition })
+        .then(data => {
+            res.send(JSON.parse(JSON.stringify(data)));
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: `Error retrieving Relations information with fkParentId ${fkParentId}`
+            });
+        });
+};
+
+// Retrieve all Relations information based on the fkParentId and fkStudentId
+exports.findAllBasedOnFkParentIdAndFkStudentId = (req, res) => {
+    const fkParentId = req.params.fkParentId;
+    const fkStudentId = req.params.fkStudentId;
+
+    console.log(req.params)
+
+    var condition = {
+        fkParentId: {
+            [Op.eq]: fkParentId
+        },
+        fkStudentId: {
+            [Op.eq]: fkStudentId
+        }
+    }
+
+    Relation.findAll({ where: condition })
+        .then(data => {
+            res.send(JSON.parse(JSON.stringify(data)));
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: `Error retrieving Relations information with fkParentId ${fkParentId} and fkStudentId ${fkStudentId}`
+            });
+        });
+};
+
+// Retrieve all Relations information based on the fkStudentId
+exports.findAllBasedOnFkStudentId = (req, res) => {
+    const fkStudentId = req.params.fkStudentId;
+
+    var condition = {
+        fkStudentId: {
+            [Op.eq]: fkStudentId
+        }
+    }
+
+    Relation.findAll({ where: condition })
+        .then(data => {
+            res.send(JSON.parse(JSON.stringify(data)));
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: `Error retrieving Relations information with fkStudentId ${fkStudentId}`
+            });
+        });
+};
+
 // Retrieve a Relation information with an id
 exports.findOne = (req, res) => {
     const id = req.params.id;

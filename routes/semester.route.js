@@ -7,6 +7,8 @@ module.exports = app => {
 
     router.get("/:id", semester.findOne);
 
+    router.get("/fkSemesterId/:fkSemesterId", semester.findAllBasedOnFk);
+
     router.put("/:id", semester.updateOne);
 
     router.delete("/:id", semester.deleteOne);

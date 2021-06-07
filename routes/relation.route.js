@@ -7,6 +7,12 @@ module.exports = app => {
 
     router.get("/:id", relation.findOne);
 
+    router.get("/fkParentId/:fkParentId", relation.findAllBasedOnFkParentId);
+
+    router.get("/fkStudentId/:fkStudentId", relation.findAllBasedOnFkStudentId);
+
+    router.get("/fkStudentId-fkParentId/:fkParentId/:fkStudentId", relation.findAllBasedOnFkParentIdAndFkStudentId);
+
     router.put("/:id", relation.updateOne);
 
     router.delete("/:id", relation.deleteOne);

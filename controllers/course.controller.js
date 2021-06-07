@@ -30,6 +30,27 @@ exports.findAll = (req, res) => {
         });
 };
 
+// Retrieve all Courses information based on the fkSemesterId
+exports.findAllBasedOnFk = (req, res) => {
+    const fkSemesterId = req.params.fkSemesterId;
+
+    var condition = {
+        fkSemesterId: {
+            [Op.eq]: fkSemesterId
+        }
+    }
+
+    Course.findAll({ where: condition })
+        .then(data => {
+            res.send(JSON.parse(JSON.stringify(data)));
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: `Error retrieving Courses information with fkSemeterId ${fkSemesterId}`
+            });
+        });
+};
+
 // Retrieve a Course information with an id
 exports.findOne = (req, res) => {
     const id = req.params.id;

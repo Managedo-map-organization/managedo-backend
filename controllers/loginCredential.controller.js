@@ -30,6 +30,27 @@ exports.findAll = (req, res) => {
         });
 };
 
+// Retrieve all login Credentials information based on the fkUserId
+exports.findAllBasedOnFk = (req, res) => {
+    const fkUserId = req.params.fkUserId;
+
+    var condition = {
+        fkUserId: {
+            [Op.eq]: fkUserId
+        }
+    }
+
+    LoginCredential.findAll({ where: condition })
+        .then(data => {
+            res.send(JSON.parse(JSON.stringify(data)));
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: `Error retrieving Login Credentials information with fkUserId ${fkUserId}`
+            });
+        });
+};
+
 // Retrieve a Login Credential information with an id
 exports.findOne = (req, res) => {
     const id = req.params.id;

@@ -30,6 +30,27 @@ exports.findAll = (req, res) => {
         });
 };
 
+// Retrieve all Educations information based on the fkStudentId
+exports.findAllBasedOnFk = (req, res) => {
+    const fkStudentId = req.params.fkStudentId;
+
+    var condition = {
+        fkStudentId: {
+            [Op.eq]: fkStudentId
+        }
+    }
+
+    Education.findAll({ where: condition })
+        .then(data => {
+            res.send(JSON.parse(JSON.stringify(data)));
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: `Error retrieving Educations information with fkStudentId ${fkStudentId}`
+            });
+        });
+};
+
 // Retrieve a Education information with an id
 exports.findOne = (req, res) => {
     const id = req.params.id;

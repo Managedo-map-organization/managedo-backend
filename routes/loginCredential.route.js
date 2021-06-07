@@ -7,6 +7,8 @@ module.exports = app => {
 
     router.get("/:id", loginCredential.findOne);
 
+    router.get("/fkUserId/:fkUserId", loginCredential.findAllBasedOnFk);
+
     router.put("/:id", loginCredential.updateOne);
 
     router.delete("/:id", loginCredential.deleteOne);

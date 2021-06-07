@@ -7,7 +7,7 @@ module.exports = app => {
 
     router.get("/:id", course.findOne);
 
-    router.get("/fkEducationId/:fkEducationId", course.findAllBasedOnFk);
+    router.get("/fkSemesterId/:fkSemesterId", course.findAllBasedOnFk);
 
     router.put("/:id", course.updateOne);
 

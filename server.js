@@ -18,14 +18,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const db = require("./models/index.js");
-// Drop existing table and re-sync database
-db.sequelize.sync({ force: true }).then(() => {
-    console.log("Drop and re-sync db.");
-});
 
-// db.sequelize.sync().then(() => {
-//     console.log("sync db status: done");
-// });
+// Sync the database
+db.sequelize.sync().then(() => {
+    console.log("sync db status: done");
+});
 
 app.get(['/', '/api'], function(req, res) {
     res.json({ message: "Managedo application database" });
@@ -33,6 +30,9 @@ app.get(['/', '/api'], function(req, res) {
 
 // add dummy
 require("./seeders/addDummy")(app);
+
+// reset database
+require("./seeders/resetDatabase")(app);
 
 // api route
 require("./routes/loginCredential.route")(app);

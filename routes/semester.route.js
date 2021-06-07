@@ -7,11 +7,7 @@ module.exports = app => {
 
     router.get("/:id", semester.findOne);
 
-<<<<<<< HEAD
-    router.get("/fkSemesterId/:fkSemesterId", semester.findAllBasedOnFk);
-=======
     router.get("/fkEducationId/:fkEducationId", semester.findAllBasedOnFk);
->>>>>>> ainal
 
     router.put("/:id", semester.updateOne);
 

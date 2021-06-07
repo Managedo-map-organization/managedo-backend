@@ -42,11 +42,11 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         targetedCGPA: {
-            type: DataTypes.DECIMAL(5, 2),
+            type: DataTypes.DOUBLE,
             allowNull: false
         },
         achievedCGPA: {
-            type: DataTypes.DECIMAL(5, 2),
+            type: DataTypes.DOUBLE,
             allowNull: false
         }
     }, {

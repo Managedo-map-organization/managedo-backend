@@ -8,7 +8,7 @@ exports.addOne = (req, res) => {
 
     LoginCredential.create(jsonData)
         .then(data => {
-            res.send(JSON.parse(JSON.stringify(`"auto-generated ID":${data.id}`)));
+            res.send(JSON.parse(JSON.stringify(data)));
         })
         .catch(err => {
             res.status(500).send({

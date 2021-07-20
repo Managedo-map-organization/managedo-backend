@@ -8,7 +8,7 @@ exports.addOne = (req, res) => {
 
     User.create(jsonData)
         .then(data => {
-            res.send(JSON.parse(JSON.stringify(data)));
+            res.status(201).send(JSON.parse(JSON.stringify(data)));
         })
         .catch(err => {
             res.status(500).send({

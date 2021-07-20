@@ -5,6 +5,7 @@ const Op = db.Sequelize.Op;
 // Add Education information
 exports.addOne = (req, res) => {
     const jsonData = req.body;
+    delete jsonData.id;
 
     Education.create(jsonData)
         .then(data => {

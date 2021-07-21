@@ -13,22 +13,22 @@
 	"users": [{
 		"id": 1,
 		"name": "Zulkaedah bin Zulhijjah",
-		"profilePicURL": "https://randomuser.me/api/portraits/thumb/women/4.jpg",
+		"profilePicURL": "http://wfmu.org/Gfx/user_images/Old-man-with-pipe_3764385719645685.jpg",
 		"phoneNo": "01111982733",
 		"gender": "male",
 		"birthDate": "1969-07-20",
-		"email": "std@gmail.com",
+		"email": "zulkaedah@gmail.com",
 		"userType": "parent",
 		"fkParentId": 1,
 		"fkStudentId": null
 	}, {
 		"id": 2,
 		"name": "Ahmad Albab bin Zulkaedah",
-		"profilePicURL": "https://randomuser.me/api/portraits/thumb/women/4.jpg",
+		"profilePicURL": "https://www.theheadshotguy.co.uk/wp-content/uploads/2014/12/Screen-Shot-2014-12-02-at-11.14.42.png",
 		"phoneNo": "01111982733",
 		"gender": "male",
 		"birthDate": "1998-06-21",
-		"email": "std@gmail.com",
+		"email": "ahmad@gmail.com",
 		"userType": "student",
 		"fkParentId": null,
 		"fkStudentId": 1
@@ -39,7 +39,7 @@
 		"phoneNo": "01111982733",
 		"gender": "female",
 		"birthDate": "1974-01-20",
-		"email": "std@gmail.com",
+		"email": "mastura@gmail.com",
 		"userType": "parent",
 		"fkParentId": 2,
 		"fkStudentId": null

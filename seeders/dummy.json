@@ -1,205 +1,205 @@
 {
-    "students": [{
-        "id": 1,
-        "matricNumber": "A18CS0115"
-    }],
+	"students": [{
+		"id": 1,
+		"matricNumber": "A18CS0115"
+	}],
 
-    "parents": [{
-        "id": 1
-    }, {
-        "id": 2
-    }],
+	"parents": [{
+		"id": 1
+	}, {
+		"id": 2
+	}],
 
-    "users": [{
-        "id": 1,
-        "name": "parent 1 name",
-        "profilePicURL": "https://randomuser.me/api/portraits/thumb/women/4.jpg",
-        "phoneNo": "01111982733",
-        "gender": "male",
-        "birthDate": "1969-07-20",
-        "email": "std@gmail.com",
-        "userType": "parent",
-        "fkParentId": 1,
-        "fkStudentId": null
-    }, {
-        "id": 2,
-        "name": "student 1 name",
-        "profilePicURL": "https://randomuser.me/api/portraits/thumb/women/4.jpg",
-        "phoneNo": "01111982733",
-        "gender": "male",
-        "birthDate": "1969-07-20",
-        "email": "std@gmail.com",
-        "userType": "student",
-        "fkParentId": null,
-        "fkStudentId": 1
-    }, {
-        "id": 3,
-        "name": "parent 2 name",
-        "profilePicURL": "https://randomuser.me/api/portraits/thumb/women/4.jpg",
-        "phoneNo": "01111982733",
-        "gender": "female",
-        "birthDate": "1969-07-20",
-        "email": "std@gmail.com",
-        "userType": "parent",
-        "fkParentId": 2,
-        "fkStudentId": null
-    }],
+	"users": [{
+		"id": 1,
+		"name": "Zulkaedah bin Zulhijjah",
+		"profilePicURL": "https://randomuser.me/api/portraits/thumb/women/4.jpg",
+		"phoneNo": "01111982733",
+		"gender": "male",
+		"birthDate": "1969-07-20",
+		"email": "std@gmail.com",
+		"userType": "parent",
+		"fkParentId": 1,
+		"fkStudentId": null
+	}, {
+		"id": 2,
+		"name": "Ahmad Albab bin Zulkaedah",
+		"profilePicURL": "https://randomuser.me/api/portraits/thumb/women/4.jpg",
+		"phoneNo": "01111982733",
+		"gender": "male",
+		"birthDate": "1998-06-21",
+		"email": "std@gmail.com",
+		"userType": "student",
+		"fkParentId": null,
+		"fkStudentId": 1
+	}, {
+		"id": 3,
+		"name": "Mastura binti Al-Masyhur Al-Buaya",
+		"profilePicURL": "https://randomuser.me/api/portraits/thumb/women/4.jpg",
+		"phoneNo": "01111982733",
+		"gender": "female",
+		"birthDate": "1974-01-20",
+		"email": "std@gmail.com",
+		"userType": "parent",
+		"fkParentId": 2,
+		"fkStudentId": null
+	}],
 
-    "loginCredentials": [{
-        "id": 1,
-        "username": "parent1-name",
-        "password": "user@!23",
-        "fkUserId": 1
-    }, {
-        "id": 2,
-        "username": "student1-name",
-        "password": "user@!23",
-        "fkUserId": 2
-    }, {
-        "id": 3,
-        "username": "parent2-name",
-        "password": "user@!23",
-        "fkUserId": 3
-    }],
+	"loginCredentials": [{
+		"id": 1,
+		"username": "zulkaedah123",
+		"password": "user@!23",
+		"fkUserId": 1
+	}, {
+		"id": 2,
+		"username": "albab123",
+		"password": "user@!23",
+		"fkUserId": 2
+	}, {
+		"id": 3,
+		"username": "mastura123",
+		"password": "user@!23",
+		"fkUserId": 3
+	}],
 
-    "relations": [{
-        "id": 1,
-        "relation": "Father",
-        "fkStudentId": 1,
-        "fkParentId": 1
-    }, {
-        "id": 2,
-        "relation": "Mother",
-        "fkStudentId": 1,
-        "fkParentId": 2
-    }],
+	"relations": [{
+		"id": 1,
+		"relation": "Father",
+		"fkStudentId": 1,
+		"fkParentId": 1
+	}, {
+		"id": 2,
+		"relation": "Mother",
+		"fkStudentId": 1,
+		"fkParentId": 2
+	}],
 
-    "educations": [{
-        "id": 1,
-        "universityName": "Universiti Teknologi Malaysia (UTM)",
-        "field": "Software Engineering",
-        "degreeLevel": "Bachelor",
-        "startDate": "1969-07-20",
-        "targetedCGPA": 4.0,
-        "achievedCGPA": 2.78,
-        "fkStudentId": 1
-    }, {
-        "id": 2,
-        "studentId": 1,
-        "universityName": "Universiti Teknologi Mara (UiTM)",
-        "field": "Software Engineering",
-        "degreeLevel": "Master",
-        "startDate": "2021-12-20",
-        "targetedCGPA": 4.0,
-        "achievedCGPA": 3.78,
-        "fkStudentId": 1
-    }],
+	"educations": [{
+		"id": 1,
+		"universityName": "Universiti Teknologi Malaysia (UTM)",
+		"field": "Software Engineering",
+		"degreeLevel": "Bachelor",
+		"startDate": "1969-07-20",
+		"targetedCGPA": 4.0,
+		"achievedCGPA": 2.78,
+		"fkStudentId": 1
+	}, {
+		"id": 2,
+		"studentId": 1,
+		"universityName": "Universiti Teknologi Mara (UiTM)",
+		"field": "Software Engineering",
+		"degreeLevel": "Master",
+		"startDate": "2021-12-20",
+		"targetedCGPA": 4.0,
+		"achievedCGPA": 3.78,
+		"fkStudentId": 1
+	}],
 
-    "semesters": [{
-        "id": 1,
-        "semesterNo": 1,
-        "durationInWeek": 8,
-        "targetedGPA": 4.00,
-        "achievedGPA": 4.00,
-        "semesterStatus": "completed",
-        "fkEducationId": 1
-    }, {
-        "id": 2,
-        "semesterNo": 2,
-        "durationInWeek": 8,
-        "targetedGPA": 4.0,
-        "achievedGPA": 4.0,
-        "semesterStatus": "completed",
-        "fkEducationId": 1
-    }, {
-        "id": 3,
-        "semesterNo": 1,
-        "durationInWeek": 8,
-        "targetedGPA": 4.0,
-        "achievedGPA": 4.0,
-        "semesterStatus": "completed",
-        "fkEducationId": 2
-    }, {
-        "id": 4,
-        "semesterNo": 2,
-        "durationInWeek": 8,
-        "targetedGPA": 4.0,
-        "achievedGPA": 4.0,
-        "semesterStatus": "completed",
-        "fkEducationId": 2
-    }],
+	"semesters": [{
+		"id": 1,
+		"semesterNo": 1,
+		"durationInWeek": 8,
+		"targetedGPA": 4.00,
+		"achievedGPA": 4.00,
+		"semesterStatus": "completed",
+		"fkEducationId": 1
+	}, {
+		"id": 2,
+		"semesterNo": 2,
+		"durationInWeek": 8,
+		"targetedGPA": 4.0,
+		"achievedGPA": 4.0,
+		"semesterStatus": "completed",
+		"fkEducationId": 1
+	}, {
+		"id": 3,
+		"semesterNo": 1,
+		"durationInWeek": 8,
+		"targetedGPA": 4.0,
+		"achievedGPA": 4.0,
+		"semesterStatus": "completed",
+		"fkEducationId": 2
+	}, {
+		"id": 4,
+		"semesterNo": 2,
+		"durationInWeek": 8,
+		"targetedGPA": 4.0,
+		"achievedGPA": 4.0,
+		"semesterStatus": "completed",
+		"fkEducationId": 2
+	}],
 
-    "courses": [{
-        "id": 1,
-        "courseCode": "SCSJ4401",
-        "courseName": "Mobile Application Programming",
-        "section": 2,
-        "credit": 4,
-        "targetedGrade": "A",
-        "achievedGrade": "B+",
-        "fkSemesterId": 1
-    }, {
-        "id": 2,
-        "courseCode": "SCSJ4302",
-        "courseName": "Object-Oriented Programming",
-        "section": 1,
-        "credit": 4,
-        "targetedGrade": "A+",
-        "achievedGrade": "A",
-        "fkSemesterId": 1
-    }, {
-        "id": 3,
-        "courseCode": "SCSJ4401",
-        "courseName": "Mobile Application Programming",
-        "section": 2,
-        "credit": 4,
-        "targetedGrade": "A",
-        "achievedGrade": "B+",
-        "fkSemesterId": 2
-    }, {
-        "id": 4,
-        "courseCode": "SCSJ4302",
-        "courseName": "Object-Oriented Programming",
-        "section": 1,
-        "credit": 4,
-        "targetedGrade": "A+",
-        "achievedGrade": "A",
-        "fkSemesterId": 2
-    }, {
-        "id": 5,
-        "courseCode": "SCSJ4401",
-        "courseName": "Mobile Application Programming",
-        "section": 2,
-        "credit": 4,
-        "targetedGrade": "A",
-        "achievedGrade": "B+",
-        "fkSemesterId": 3
-    }, {
-        "id": 6,
-        "courseCode": "SCSJ4302",
-        "courseName": "Object-Oriented Programming",
-        "section": 1,
-        "credit": 4,
-        "targetedGrade": "A+",
-        "achievedGrade": "A",
-        "fkSemesterId": 3
-    }, {
-        "id": 7,
-        "courseCode": "SCSJ4401",
-        "courseName": "Mobile Application Programming",
-        "section": 2,
-        "credit": 4,
-        "targetedGrade": "A",
-        "achievedGrade": "B+",
-        "fkSemesterId": 4
-    }, {
-        "id": 8,
-        "courseCode": "SCSJ4302",
-        "courseName": "Object-Oriented Programming",
-        "section": 1,
-        "credit": 4,
-        "targetedGrade": "A+",
-        "achievedGrade": "A",
-        "fkSemesterId": 4
-    }]
+	"courses": [{
+		"id": 1,
+		"courseCode": "SCSJ4401",
+		"courseName": "Mobile Application Programming",
+		"section": 2,
+		"credit": 4,
+		"targetedGrade": "A",
+		"achievedGrade": "B+",
+		"fkSemesterId": 1
+	}, {
+		"id": 2,
+		"courseCode": "SCSJ4302",
+		"courseName": "Object-Oriented Programming",
+		"section": 1,
+		"credit": 4,
+		"targetedGrade": "A+",
+		"achievedGrade": "A",
+		"fkSemesterId": 1
+	}, {
+		"id": 3,
+		"courseCode": "SCSJ4401",
+		"courseName": "Mobile Application Programming",
+		"section": 2,
+		"credit": 4,
+		"targetedGrade": "A",
+		"achievedGrade": "B+",
+		"fkSemesterId": 2
+	}, {
+		"id": 4,
+		"courseCode": "SCSJ4302",
+		"courseName": "Object-Oriented Programming",
+		"section": 1,
+		"credit": 4,
+		"targetedGrade": "A+",
+		"achievedGrade": "A",
+		"fkSemesterId": 2
+	}, {
+		"id": 5,
+		"courseCode": "SCSJ4401",
+		"courseName": "Mobile Application Programming",
+		"section": 2,
+		"credit": 4,
+		"targetedGrade": "A",
+		"achievedGrade": "B+",
+		"fkSemesterId": 3
+	}, {
+		"id": 6,
+		"courseCode": "SCSJ4302",
+		"courseName": "Object-Oriented Programming",
+		"section": 1,
+		"credit": 4,
+		"targetedGrade": "A+",
+		"achievedGrade": "A",
+		"fkSemesterId": 3
+	}, {
+		"id": 7,
+		"courseCode": "SCSJ4401",
+		"courseName": "Mobile Application Programming",
+		"section": 2,
+		"credit": 4,
+		"targetedGrade": "A",
+		"achievedGrade": "B+",
+		"fkSemesterId": 4
+	}, {
+		"id": 8,
+		"courseCode": "SCSJ4302",
+		"courseName": "Object-Oriented Programming",
+		"section": 1,
+		"credit": 4,
+		"targetedGrade": "A+",
+		"achievedGrade": "A",
+		"fkSemesterId": 4
+	}]
 }
